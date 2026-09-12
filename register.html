@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchly - Register</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-brand">
+            <a href="homepage.html">Match<span>ly</span></a>
+        </div>
+        
+        <div class="auth-card">
+            <h2>Create an Account</h2>
+            <p class="auth-subtitle">Start your journey to find love</p>
+
+            <form class="auth-form" action="homepage.html" method="GET">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" class="form-input" placeholder="e.g. Priya Sharma" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" class="form-input" style="padding: 0.8rem 1rem;" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Create a strong password" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label" style="font-size: 0.85rem;">
+                        <input type="checkbox" required> I agree to the <a href="#" class="forgot-link">Terms & Conditions</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn--primary w-100 btn--large">Create Profile</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Log In</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

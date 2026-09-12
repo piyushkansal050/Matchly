@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchly - Subscriptions</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .pricing-section {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .pricing-section p {
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            transition: transform var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-card--popular {
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .pricing-price span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="logged-out">
+    <nav class="navbar">
+        <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <label for="mobile-menu-toggle" class="navbar__toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li><a href="homepage.html" class="navbar__link">Home</a></li>
+            <li><a href="search.html" class="navbar__link">Matches</a></li>
+            <li><a href="about.html" class="navbar__link">About Us</a></li>
+            <li class="nav-item-messages"><a href="messages.html" class="navbar__link">Messages</a></li>
+            <li><a href="subscription.html" class="navbar__link navbar__link--active">Subscription</a></li>
+        </ul>
+        <div class="navbar__actions nav-actions-logged-out">
+            <a href="login.html" class="btn btn--outline">Log In</a>
+            <a href="register.html" class="btn btn--primary">Sign Up</a>
+        </div>
+        <div class="navbar__actions nav-actions-logged-in">
+            <a href="homepage.html" class="btn btn--outline">Log Out</a>
+        </div>
+    </nav>
+
+    <main class="pricing-section">
+        <h2>Choose Your Plan</h2>
+        <p>Unlock premium features to get more matches and find the one faster.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <div class="pricing-price">Free</div>
+                <ul class="pricing-features">
+                    <li>Create a profile</li>
+                    <li>Browse members</li>
+                    <li>Send up to 5 messages per day</li>
+                    <li>Basic search filters</li>
+                </ul>
+                <button class="btn btn--outline w-100">Current Plan</button>
+            </div>
+
+            <div class="pricing-card pricing-card--popular">
+                <div class="popular-badge">Most Popular</div>
+                <h3>Premium</h3>
+                <div class="pricing-price">$9.99<span>/mo</span></div>
+                <ul class="pricing-features">
+                    <li>Everything in Basic</li>
+                    <li>Unlimited messaging</li>
+                    <li>See who liked your profile</li>
+                    <li>Advanced search filters</li>
+                    <li>Ad-free experience</li>
+                </ul>
+                <button class="btn btn--primary w-100">Upgrade to Premium</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>VIP</h3>
+                <div class="pricing-price">$19.99<span>/mo</span></div>
+                <ul class="pricing-features">
+                    <li>Everything in Premium</li>
+                    <li>Priority profile placement</li>
+                    <li>Read receipts for messages</li>
+                    <li>Dedicated support</li>
+                </ul>
+                <button class="btn btn--outline w-100">Get VIP</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__column">
+                <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+                <p style="margin-top: 1rem;">Connecting hearts globally. Find your perfect match with confidence and trust.</p>
+            </div>
+            <div class="footer__column">
+                <h3>Quick Links</h3>
+                <a href="homepage.html">Home</a>
+                <a href="search.html">Find Matches</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Matchly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
