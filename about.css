@@ -1,0 +1,85 @@
+/* About Page Specific Styles */
+
+.about-hero {
+    background: linear-gradient(135deg, rgba(33, 33, 33, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-content {
+    padding: 5rem 5%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-section {
+    margin-bottom: 4rem;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+

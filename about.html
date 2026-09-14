@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchly - About Us</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body class="logged-out">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="homepage.html" class="navbar__brand">
+            Match<span>ly</span>
+        </a>
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <label for="mobile-menu-toggle" class="navbar__toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li><a href="homepage.html" class="navbar__link">Home</a></li>
+            <li><a href="search.html" class="navbar__link">Matches</a></li>
+            <li><a href="about.html" class="navbar__link navbar__link--active">About Us</a></li>
+            <li class="nav-item-messages"><a href="messages.html" class="navbar__link">Messages</a></li>
+            <li><a href="subscription.html" class="navbar__link">Subscription</a></li>
+        </ul>
+        <div class="navbar__actions nav-actions-logged-out">
+            <a href="login.html" class="btn btn--outline">Log In</a>
+            <a href="register.html" class="btn btn--primary">Sign Up</a>
+        </div>
+        <div class="navbar__actions nav-actions-logged-in">
+            <a href="homepage.html" class="btn btn--outline">Log Out</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="about-hero">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>We believe everyone deserves to find their perfect match. That's why we created Matchly.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="about-content">
+        <section class="about-section">
+            <h2>The Matchly Mission</h2>
+            <p class="about-text">
+                At Matchly, our mission is simple: to connect hearts globally with trust and authenticity. We understand that finding a life partner is one of the most important decisions you will ever make. That's why we have built a platform that goes beyond superficial swiping, focusing instead on deep compatibility, shared values, and meaningful connections.
+            </p>
+            <p class="about-text">
+                Founded in 2026, we noticed a gap in the modern matchmaking industry. While many platforms offered sheer volume, very few prioritized quality and security. Matchly was born out of a desire to create a safe, inclusive, and highly effective environment for singles seeking serious relationships and marriage.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Happy Couples</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-label">Verified Profiles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" style="text-align: center; margin-top: 5rem;">
+            <h2>Ready to find your match?</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-light);">Join our growing community and start your journey today.</p>
+            <a href="register.html" class="btn btn--primary btn--large">Create Your Free Profile</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__column">
+                <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+                <p style="margin-top: 1rem;">Connecting hearts globally. Find your perfect match with confidence and trust.</p>
+            </div>
+            <div class="footer__column">
+                <h3>Quick Links</h3>
+                <a href="homepage.html">Home</a>
+                <a href="search.html">Find Matches</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Matchly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

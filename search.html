@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchly - Search Profiles</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body class="logged-in">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="homepage.html" class="navbar__brand">
+            Match<span>ly</span>
+        </a>
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <label for="mobile-menu-toggle" class="navbar__toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li><a href="homepage.html" class="navbar__link">Home</a></li>
+            <li><a href="search.html" class="navbar__link navbar__link--active">Matches</a></li>
+            <li><a href="about.html" class="navbar__link">About Us</a></li>
+            <li class="nav-item-messages"><a href="messages.html" class="navbar__link">Messages</a></li>
+            <li><a href="subscription.html" class="navbar__link">Subscription</a></li>
+        </ul>
+        <div class="navbar__actions nav-actions-logged-out">
+            <a href="login.html" class="btn btn--outline">Log In</a>
+            <a href="register.html" class="btn btn--primary">Sign Up</a>
+        </div>
+        <div class="navbar__actions nav-actions-logged-in">
+            <a href="homepage.html" class="btn btn--outline">Log Out</a>
+        </div>
+    </nav>
+
+    <div class="search-layout container">
+        <!-- Sidebar Filters -->
+        <aside class="filters">
+            <div class="filters__header">
+                <h3>Filter Matches</h3>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">Age Range</label>
+                <div class="filter-inputs">
+                    <input type="number" placeholder="Min" class="filter-input" value="18" min="18" max="50">
+                    <span>to</span>
+                    <input type="number" placeholder="Max" class="filter-input" value="50" min="18" max="50">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Religion</label>
+                <select class="filter-select">
+                    <option value="">Any</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="muslim">Muslim</option>
+                    <option value="christian">Christian</option>
+                    <option value="sikh">Sikh</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Location</label>
+                <input type="text" placeholder="City or State" class="filter-input w-100">
+            </div>
+            
+            <button class="btn btn--primary w-100" style="margin-top: 1rem;">Apply Filters</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="results">
+            <div class="results__header">
+                <h2>Found 124 matches for you</h2>
+                <select class="sort-select">
+                    <option>Newest First</option>
+                    <option>Oldest First</option>
+                </select>
+            </div>
+
+            <div class="profiles-grid">
+                <!-- 50 Profiles -->
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Priya Sharma <span class="verified-badge">✓</span></h3><span class="profile-age">26 yrs</span></div><p class="profile-detail">Software Engineer • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Rahul Verma <span class="verified-badge">✓</span></h3><span class="profile-age">29 yrs</span></div><p class="profile-detail">Marketing Manager • Mumbai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Anjali Gupta <span class="verified-badge">✓</span></h3><span class="profile-age">25 yrs</span></div><p class="profile-detail">Doctor • Bangalore</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Amit Singh <span class="verified-badge">✓</span></h3><span class="profile-age">31 yrs</span></div><p class="profile-detail">Architect • Pune</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Sneha Patel <span class="verified-badge">✓</span></h3><span class="profile-age">24 yrs</span></div><p class="profile-detail">Designer • Ahmedabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Vikram Rao <span class="verified-badge">✓</span></h3><span class="profile-age">33 yrs</span></div><p class="profile-detail">Analyst • Hyderabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Neha Reddy <span class="verified-badge">✓</span></h3><span class="profile-age">27 yrs</span></div><p class="profile-detail">Teacher • Chennai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Rohit Kumar <span class="verified-badge">✓</span></h3><span class="profile-age">30 yrs</span></div><p class="profile-detail">Entrepreneur • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Pooja Nair <span class="verified-badge">✓</span></h3><span class="profile-age">28 yrs</span></div><p class="profile-detail">Writer • Mumbai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Karan Johar <span class="verified-badge">✓</span></h3><span class="profile-age">35 yrs</span></div><p class="profile-detail">Director • Bangalore</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Riya Singh <span class="verified-badge">✓</span></h3><span class="profile-age">23 yrs</span></div><p class="profile-detail">Student • Pune</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Arjun Das <span class="verified-badge">✓</span></h3><span class="profile-age">32 yrs</span></div><p class="profile-detail">Consultant • Hyderabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Divya Menon <span class="verified-badge">✓</span></h3><span class="profile-age">29 yrs</span></div><p class="profile-detail">HR Manager • Chennai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Kunal Kapoor <span class="verified-badge">✓</span></h3><span class="profile-age">34 yrs</span></div><p class="profile-detail">Lawyer • Kolkata</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Swati Joshi <span class="verified-badge">✓</span></h3><span class="profile-age">26 yrs</span></div><p class="profile-detail">Scientist • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Vishal Gupta <span class="verified-badge">✓</span></h3><span class="profile-age">31 yrs</span></div><p class="profile-detail">Engineer • Mumbai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Meera Nair <span class="verified-badge">✓</span></h3><span class="profile-age">28 yrs</span></div><p class="profile-detail">Artist • Bangalore</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Aditya Roy <span class="verified-badge">✓</span></h3><span class="profile-age">30 yrs</span></div><p class="profile-detail">Manager • Pune</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Kiran Desai <span class="verified-badge">✓</span></h3><span class="profile-age">25 yrs</span></div><p class="profile-detail">Designer • Ahmedabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Saurabh Jain <span class="verified-badge">✓</span></h3><span class="profile-age">33 yrs</span></div><p class="profile-detail">Analyst • Hyderabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Aarti Sen <span class="verified-badge">✓</span></h3><span class="profile-age">27 yrs</span></div><p class="profile-detail">Teacher • Chennai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Akash Deep <span class="verified-badge">✓</span></h3><span class="profile-age">29 yrs</span></div><p class="profile-detail">Entrepreneur • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Shruti Hassan <span class="verified-badge">✓</span></h3><span class="profile-age">24 yrs</span></div><p class="profile-detail">Writer • Mumbai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Manish Paul <span class="verified-badge">✓</span></h3><span class="profile-age">35 yrs</span></div><p class="profile-detail">Director • Bangalore</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Kavita Kaushik <span class="verified-badge">✓</span></h3><span class="profile-age">32 yrs</span></div><p class="profile-detail">Student • Pune</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Varun Dhawan <span class="verified-badge">✓</span></h3><span class="profile-age">28 yrs</span></div><p class="profile-detail">Consultant • Hyderabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Nidhi Agarwal <span class="verified-badge">✓</span></h3><span class="profile-age">26 yrs</span></div><p class="profile-detail">HR Manager • Chennai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Deepak Chahar <span class="verified-badge">✓</span></h3><span class="profile-age">31 yrs</span></div><p class="profile-detail">Lawyer • Kolkata</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Shweta Tiwari <span class="verified-badge">✓</span></h3><span class="profile-age">29 yrs</span></div><p class="profile-detail">Scientist • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Yash Raj <span class="verified-badge">✓</span></h3><span class="profile-age">34 yrs</span></div><p class="profile-detail">Engineer • Mumbai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Prachi Desai <span class="verified-badge">✓</span></h3><span class="profile-age">25 yrs</span></div><p class="profile-detail">Artist • Bangalore</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Abhishek Bachchan <span class="verified-badge">✓</span></h3><span class="profile-age">30 yrs</span></div><p class="profile-detail">Manager • Pune</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Jyoti Randhawa <span class="verified-badge">✓</span></h3><span class="profile-age">27 yrs</span></div><p class="profile-detail">Designer • Ahmedabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Prateek Babbar <span class="verified-badge">✓</span></h3><span class="profile-age">33 yrs</span></div><p class="profile-detail">Analyst • Hyderabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Ankita Lokhande <span class="verified-badge">✓</span></h3><span class="profile-age">29 yrs</span></div><p class="profile-detail">Teacher • Chennai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Sanjay Dutt <span class="verified-badge">✓</span></h3><span class="profile-age">45 yrs</span></div><p class="profile-detail">Entrepreneur • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Ritu Beri <span class="verified-badge">✓</span></h3><span class="profile-age">36 yrs</span></div><p class="profile-detail">Writer • Mumbai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Gaurav Kapoor <span class="verified-badge">✓</span></h3><span class="profile-age">40 yrs</span></div><p class="profile-detail">Director • Bangalore</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Rashi Khanna <span class="verified-badge">✓</span></h3><span class="profile-age">26 yrs</span></div><p class="profile-detail">Student • Pune</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Alok Nath <span class="verified-badge">✓</span></h3><span class="profile-age">50 yrs</span></div><p class="profile-detail">Consultant • Hyderabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Sonali Bendre <span class="verified-badge">✓</span></h3><span class="profile-age">38 yrs</span></div><p class="profile-detail">HR Manager • Chennai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Nitin Mukesh <span class="verified-badge">✓</span></h3><span class="profile-age">42 yrs</span></div><p class="profile-detail">Lawyer • Kolkata</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Monika Bedi <span class="verified-badge">✓</span></h3><span class="profile-age">35 yrs</span></div><p class="profile-detail">Scientist • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Tarun Mansukhani <span class="verified-badge">✓</span></h3><span class="profile-age">48 yrs</span></div><p class="profile-detail">Engineer • Mumbai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Preeti Jhangiani <span class="verified-badge">✓</span></h3><span class="profile-age">33 yrs</span></div><p class="profile-detail">Artist • Bangalore</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Mohit Suri <span class="verified-badge">✓</span></h3><span class="profile-age">44 yrs</span></div><p class="profile-detail">Manager • Pune</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Shilpa Shetty <span class="verified-badge">✓</span></h3><span class="profile-age">39 yrs</span></div><p class="profile-detail">Designer • Ahmedabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Ankit Tiwari <span class="verified-badge">✓</span></h3><span class="profile-age">37 yrs</span></div><p class="profile-detail">Analyst • Hyderabad</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Shalini Pandey <span class="verified-badge">✓</span></h3><span class="profile-age">28 yrs</span></div><p class="profile-detail">Teacher • Chennai</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+                <div class="profile-card"><div class="profile-card__img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80')"></div><div class="profile-card__body"><div class="profile-card__header"><h3 class="profile-name">Vivek Oberoi <span class="verified-badge">✓</span></h3><span class="profile-age">43 yrs</span></div><p class="profile-detail">Entrepreneur • Delhi</p><a href="profile.html" class="btn btn--outline w-100" style="margin-top: 1rem;">View Profile</a></div></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__column">
+                <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+                <p style="margin-top: 1rem;">Connecting hearts globally. Find your perfect match with confidence and trust.</p>
+            </div>
+            <div class="footer__column">
+                <h3>Quick Links</h3>
+                <a href="homepage.html">Home</a>
+                <a href="search.html">Find Matches</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Matchly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

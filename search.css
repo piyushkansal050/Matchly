@@ -1,0 +1,149 @@
+/* Search Page Specific Styles */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.search-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    min-height: calc(100vh - 350px);
+}
+
+/* Sidebar */
+.filters {
+    background-color: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.filters__header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.filter-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-input, .filter-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.filter-input:focus, .filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Results Area */
+.results__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.results__header h2 {
+    font-size: 1.5rem;
+}
+
+.sort-select {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: box-shadow var(--transition-speed);
+}
+
+.profile-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.profile-card__img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-card__body {
+    padding: 1.5rem;
+}
+
+.profile-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.verified-badge {
+    color: #4CAF50;
+    font-size: 0.9rem;
+}
+
+.profile-age {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.profile-detail {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .search-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
