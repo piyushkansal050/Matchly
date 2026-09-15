@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchly - Messages</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .messaging-layout {
+            display: flex;
+            height: calc(100vh - 70px);
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .chat-list {
+            width: 300px;
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+        }
+        .chat-list__header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-light);
+        }
+        .chat-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            display: flex;
+            gap: 1rem;
+            transition: background var(--transition-speed);
+        }
+        .chat-item:hover, .chat-item--active {
+            background: var(--bg-light);
+        }
+        .chat-item__avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            background-size: cover;
+            background-position: center;
+        }
+        .chat-item__info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .chat-item__info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 180px;
+        }
+        .chat-window {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-window__header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-white);
+        }
+        .chat-window__messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .message {
+            max-width: 60%;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        .message--received {
+            background: white;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+        .message--sent {
+            background: var(--primary-color);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+        .chat-window__input {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            background: white;
+            display: flex;
+            gap: 1rem;
+        }
+        .chat-window__input input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="logged-in">
+    <nav class="navbar">
+        <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <label for="mobile-menu-toggle" class="navbar__toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li><a href="homepage.html" class="navbar__link">Home</a></li>
+            <li><a href="search.html" class="navbar__link">Matches</a></li>
+            <li><a href="about.html" class="navbar__link">About Us</a></li>
+            <li class="nav-item-messages"><a href="messages.html" class="navbar__link navbar__link--active">Messages</a></li>
+            <li><a href="subscription.html" class="navbar__link">Subscription</a></li>
+        </ul>
+        <div class="navbar__actions nav-actions-logged-out">
+            <a href="login.html" class="btn btn--outline">Log In</a>
+            <a href="register.html" class="btn btn--primary">Sign Up</a>
+        </div>
+        <div class="navbar__actions nav-actions-logged-in">
+            <a href="homepage.html" class="btn btn--outline">Log Out</a>
+        </div>
+    </nav>
+
+    <div class="messaging-layout">
+        <aside class="chat-list">
+            <div class="chat-list__header">
+                <h3>Your Conversations</h3>
+            </div>
+            <div class="chat-item chat-item--active">
+                <div class="chat-item__avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80')"></div>
+                <div class="chat-item__info">
+                    <h4>Priya Sharma</h4>
+                    <p>That sounds great! Let's meet.</p>
+                </div>
+            </div>
+            <div class="chat-item">
+                <div class="chat-item__avatar" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80')"></div>
+                <div class="chat-item__info">
+                    <h4>Rahul Verma</h4>
+                    <p>Haha, I totally agree.</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-window">
+            <div class="chat-window__header">
+                <div class="chat-item__avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80')"></div>
+                <h3>Priya Sharma</h3>
+            </div>
+            <div class="chat-window__messages">
+                <div class="message message--received">
+                    Hey! I saw your profile and we have a lot in common. 
+                </div>
+                <div class="message message--sent">
+                    Hi Priya! Nice to meet you. I noticed you like hiking too?
+                </div>
+                <div class="message message--received">
+                    Yes! I usually go every weekend. We should plan a trip sometime.
+                </div>
+                <div class="message message--sent">
+                    That sounds great! Let's meet.
+                </div>
+            </div>
+            <div class="chat-window__input">
+                <input type="text" placeholder="Type your message here...">
+                <button class="btn btn--primary">Send</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

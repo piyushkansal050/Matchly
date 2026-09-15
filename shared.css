@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #e91e63;
+  --primary-hover: #c2185b;
+  --secondary-color: #ffc107;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --border-color: #e0e0e0;
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--bg-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar__brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navbar__brand span {
+  color: var(--text-dark);
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar__link {
+  font-weight: 500;
+  color: var(--text-light);
+  transition: color var(--transition-speed);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--primary-color);
+}
+
+.navbar__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  border: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn--outline {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-white);
+  padding: 3rem 5% 1.5rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer__column h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer__column p,
+.footer__column a {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.footer__column a:hover {
+  color: var(--primary-color);
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Auth States */
+.logged-out .nav-item-messages { display: none !important; }
+.logged-in .nav-actions-logged-out { display: none !important; }
+.logged-out .nav-actions-logged-in { display: none !important; }
+
+/* Hamburger Menu and Mobile Responsiveness (Pure CSS) */
+.mobile-menu-toggle {
+    display: none;
+}
+
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+    .navbar__toggle {
+        display: flex;
+        order: 2;
+    }
+    .navbar__brand {
+        order: 1;
+    }
+    .navbar__menu {
+        order: 3;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 1rem;
+        gap: 1rem;
+    }
+    
+    .mobile-menu-toggle:checked ~ .navbar__menu {
+        display: flex;
+    }
+
+    .navbar__actions {
+        order: 4;
+        width: 100%;
+        display: none;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    
+    .mobile-menu-toggle:checked ~ .nav-actions-logged-out {
+        display: flex;
+    }
+    .mobile-menu-toggle:checked ~ .nav-actions-logged-in {
+        display: flex;
+    }
+}

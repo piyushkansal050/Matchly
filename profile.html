@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchly - Priya Sharma</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body class="logged-out">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="homepage.html" class="navbar__brand">
+            Match<span>ly</span>
+        </a>
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <label for="mobile-menu-toggle" class="navbar__toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li><a href="homepage.html" class="navbar__link">Home</a></li>
+            <li><a href="search.html" class="navbar__link navbar__link--active">Matches</a></li>
+            <li><a href="about.html" class="navbar__link">About Us</a></li>
+            <li class="nav-item-messages"><a href="messages.html" class="navbar__link">Messages</a></li>
+            <li><a href="subscription.html" class="navbar__link">Subscription</a></li>
+        </ul>
+        <div class="navbar__actions nav-actions-logged-out">
+            <a href="login.html" class="btn btn--outline">Log In</a>
+            <a href="register.html" class="btn btn--primary">Sign Up</a>
+        </div>
+        <div class="navbar__actions nav-actions-logged-in">
+            <a href="homepage.html" class="btn btn--outline">Log Out</a>
+        </div>
+    </nav>
+
+    <!-- Profile Cover -->
+    <div class="profile-cover">
+        <!-- Cover background -->
+    </div>
+
+    <div class="container profile-container">
+        <!-- Sidebar Profile Info -->
+        <aside class="profile-sidebar">
+            <div class="profile-avatar"
+                style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80')">
+            </div>
+            <h1 class="profile-name">Priya Sharma <span class="verified-badge">✓</span></h1>
+            <p class="profile-id">Matchly ID: M104523</p>
+
+            <div class="profile-actions">
+                <button class="btn btn--primary w-100">Send Interest</button>
+                <button class="btn btn--outline w-100" style="margin-top: 0.5rem;">Shortlist</button>
+            </div>
+        </aside>
+
+        <!-- Main Details -->
+        <main class="profile-details">
+            <section class="detail-section">
+                <h2>About Priya</h2>
+                <p>Hello! I am a software engineer working in a reputed MNC in Delhi. I believe in a balanced lifestyle,
+                    blending modern values with traditional roots. In my free time, I love reading, traveling to
+                    mountains, and exploring new cafes.</p>
+            </section>
+
+            <section class="detail-section">
+                <h2>Basic Details</h2>
+                <ul class="detail-list">
+                    <li><span class="detail-label">Age</span> <span class="detail-value">26 Years</span></li>
+                    <li><span class="detail-label">Height</span> <span class="detail-value">5' 4" (162 cm)</span></li>
+                    <li><span class="detail-label">Religion</span> <span class="detail-value">Hindu</span></li>
+                    <li><span class="detail-label">Mother Tongue</span> <span class="detail-value">Hindi</span></li>
+                    <li><span class="detail-label">Marital Status</span> <span class="detail-value">Never Married</span>
+                    </li>
+                    <li><span class="detail-label">Location</span> <span class="detail-value">Delhi, India</span></li>
+                </ul>
+            </section>
+
+            <section class="detail-section">
+                <h2>Education & Career</h2>
+                <ul class="detail-list">
+                    <li><span class="detail-label">Highest Education</span> <span class="detail-value">B.Tech in
+                            Computer Science</span></li>
+                    <li><span class="detail-label">College</span> <span class="detail-value">Delhi Technological
+                            University</span></li>
+                    <li><span class="detail-label">Occupation</span> <span class="detail-value">Software Engineer</span>
+                    </li>
+                    <li><span class="detail-label">Annual Income</span> <span class="detail-value">Private (Available on
+                            Request)</span></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__column">
+                <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+                <p style="margin-top: 1rem;">Connecting hearts globally. Find your perfect match with confidence and
+                    trust.</p>
+            </div>
+            <div class="footer__column">
+                <h3>Quick Links</h3>
+                <a href="homepage.html">Home</a>
+                <a href="search.html">Find Matches</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Matchly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
