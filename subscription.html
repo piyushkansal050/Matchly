@@ -4,97 +4,446 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matchly - Subscriptions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <style>
         .pricing-section {
-            padding: 5rem 5%;
+            padding: 4rem 5%;
             text-align: center;
         }
         .pricing-section h2 {
+            font-family: var(--font-heading);
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
         }
-        .pricing-section p {
-            color: var(--text-light);
-            margin-bottom: 3rem;
+        .pricing-section p.pricing-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 1.05rem;
         }
+
+        /* Subscription Auth Status Bar */
+        .subscription-auth-status-container {
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+            text-align: left;
+        }
+        .sub-auth-status-bar {
+            border-radius: 16px;
+            padding: 1.1rem 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+        .sub-auth-status-bar--guest {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.07) 0%, rgba(156, 39, 176, 0.07) 100%);
+            border-left: 5px solid var(--primary-color);
+        }
+        .sub-auth-status-bar--logged-in {
+            background: var(--bg-surface);
+            border-left: 5px solid var(--success-color);
+        }
+        .sub-guest-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+            min-width: 280px;
+        }
+        .sub-guest-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+        .sub-guest-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.45;
+        }
+        .sub-guest-text strong {
+            color: var(--primary-color);
+        }
+        .sub-guest-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .sub-user-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .sub-user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid var(--primary-color);
+            flex-shrink: 0;
+        }
+        .sub-user-name {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+        .sub-user-info {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .sub-tier-badge {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.12), rgba(156, 39, 176, 0.12));
+            color: var(--primary-color);
+            padding: 0.45rem 1.1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid var(--border-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 1040px;
             margin: 0 auto;
         }
         .pricing-card {
-            background: white;
-            border-radius: 8px;
-            padding: 3rem 2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: var(--bg-surface);
+            border-radius: 20px;
+            padding: 3rem 2.2rem;
+            box-shadow: var(--card-shadow);
             border: 1px solid var(--border-color);
-            transition: transform var(--transition-speed);
+            transition: all var(--transition-speed);
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
         }
         .pricing-card--popular {
-            border-color: var(--primary-color);
-            position: relative;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 12px 35px rgba(233, 30, 99, 0.2);
         }
         .popular-badge {
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-color);
+            background: var(--gradient-primary);
             color: white;
-            padding: 0.2rem 1rem;
+            padding: 0.35rem 1.2rem;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
         }
         .pricing-card h3 {
-            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-main);
             margin-bottom: 1rem;
         }
         .pricing-price {
+            font-family: var(--font-heading);
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1.5rem;
             color: var(--primary-color);
+            line-height: 1;
         }
         .pricing-price span {
+            font-family: var(--font-body);
             font-size: 1rem;
-            color: var(--text-light);
+            color: var(--text-muted);
             font-weight: 400;
         }
         .pricing-features {
             text-align: left;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             flex: 1;
         }
         .pricing-features li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
+            margin-bottom: 0.9rem;
+            padding-left: 1.6rem;
             position: relative;
+            color: var(--text-main);
+            font-size: 0.95rem;
         }
         .pricing-features li::before {
             content: "✓";
             color: var(--primary-color);
             position: absolute;
             left: 0;
-            font-weight: bold;
+            font-weight: 800;
+        }
+        .pricing-card .btn {
+            border-radius: 12px;
+            padding: 0.85rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Modals */
+        .matchly-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(13, 6, 17, 0.72);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100000;
+            animation: matchlyFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 1.5rem;
+        }
+        @keyframes matchlyFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes matchlyScaleUp {
+            from { opacity: 0; transform: scale(0.92) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .matchly-modal-card {
+            background: var(--bg-surface);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.4rem 2.2rem;
+            max-width: 460px;
+            width: 100%;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.45);
+            text-align: center;
+            position: relative;
+            animation: matchlyScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .matchly-modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: transparent;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .matchly-modal-close:hover {
+            background: var(--bg-soft);
+            color: var(--text-main);
+        }
+        .matchly-modal-badge {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.15) 0%, rgba(255, 64, 129, 0.2) 100%);
+            border: 2px solid rgba(233, 30, 99, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 1.2rem auto;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
+        }
+        .matchly-modal-card h3 {
+            font-size: 1.55rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-main);
+        }
+        .matchly-modal-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.4rem;
+        }
+        .matchly-plan-summary-box {
+            background: var(--bg-soft);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.1rem 1.3rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+        .matchly-plan-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .matchly-plan-summary-row:last-child {
+            margin-bottom: 0;
+            padding-top: 6px;
+            border-top: 1px dashed var(--border-color);
+        }
+        .matchly-modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .matchly-modal-actions .btn {
+            padding: 0.85rem 1.4rem;
+            font-size: 0.98rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        /* Inline Auth Tabs & Forms inside Modal */
+        .auth-modal-tabs {
+            display: flex;
+            background: var(--bg-soft);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 4px;
+            margin: 1.2rem 0;
+            gap: 4px;
+        }
+        .auth-modal-tab {
+            flex: 1;
+            padding: 0.65rem 1rem;
+            border: none;
+            background: transparent;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-body);
+        }
+        .auth-modal-tab:hover {
+            color: var(--text-main);
+        }
+        .auth-modal-tab.active {
+            background: var(--bg-surface);
+            color: var(--primary-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        .auth-modal-form {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+        .auth-modal-form .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .auth-modal-form label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .auth-modal-form input,
+        .auth-modal-form select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-main);
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: var(--font-body);
+            box-sizing: border-box;
+        }
+        .auth-modal-form input:focus,
+        .auth-modal-form select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.15);
+        }
+        .auth-modal-error {
+            background: rgba(244, 67, 54, 0.1);
+            color: #d32f2f;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.84rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.4;
+            animation: matchlyFadeIn 0.2s ease;
+        }
+        .auth-modal-hint {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+        .auth-modal-criteria {
+            background: var(--bg-soft);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.78rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .auth-switch-link {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+        .auth-switch-link a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .matchly-modal-card {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .matchly-modal-secondary-link {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            cursor: pointer;
+            margin-top: 6px;
+            padding: 4px;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+        .matchly-modal-secondary-link:hover {
+            color: var(--text-main);
         }
     </style>
 </head>
 <body class="logged-out">
+    <!-- Navbar -->
     <nav class="navbar">
-        <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+        <a href="homepage.html" class="navbar__brand"><span class="navbar__brand-icon">💖</span><span class="navbar__brand-text">Match<span>ly</span></span></a>
         <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
         <label for="mobile-menu-toggle" class="navbar__toggle">
             <span class="bar"></span>
@@ -103,26 +452,38 @@
         </label>
         <ul class="navbar__menu">
             <li><a href="homepage.html" class="navbar__link">Home</a></li>
-            <li><a href="search.html" class="navbar__link">Matches</a></li>
-            <li><a href="about.html" class="navbar__link">About Us</a></li>
-            <li class="nav-item-messages"><a href="messages.html" class="navbar__link">Messages</a></li>
+            <li class="nav-item-matches"><a href="search.html" class="navbar__link">Find Matches</a></li>
+            <li class="nav-item-messages"><a href="messages.html" class="navbar__link" style="position: relative;">Messages<span class="nav-msg-dot"></span></a></li>
             <li><a href="subscription.html" class="navbar__link navbar__link--active">Subscription</a></li>
+            <li><a href="about.html" class="navbar__link">About Us</a></li>
         </ul>
         <div class="navbar__actions nav-actions-logged-out">
+            <button id="theme-toggle-btn" class="theme-toggle-inline" title="Toggle Theme" aria-label="Toggle Theme">🌙</button>
             <a href="login.html" class="btn btn--outline">Log In</a>
             <a href="register.html" class="btn btn--primary">Sign Up</a>
         </div>
         <div class="navbar__actions nav-actions-logged-in">
-            <a href="homepage.html" class="btn btn--outline">Log Out</a>
+            <button id="theme-toggle-btn-auth" class="theme-toggle-inline" title="Toggle Theme" aria-label="Toggle Theme">🌙</button>
+            <a href="profile.html#view=me" class="navbar__user-pill" title="View My Profile" style="text-decoration: none; cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" alt="Member" class="user-avatar-mini">
+                <div class="user-info-text">
+                    <span class="user-name-span">Rakshit</span>
+                    <span class="user-status-span">✓ Verified</span>
+                </div>
+            </a>
+            <a href="homepage.html" class="btn btn--outline btn-matchly-logout" style="padding: 0.35rem 0.8rem; font-size: 0.82rem; border-radius: 8px;">Log Out</a>
         </div>
     </nav>
 
     <main class="pricing-section">
         <h2>Choose Your Plan</h2>
-        <p>Unlock premium features to get more matches and find the one faster.</p>
+        <p class="pricing-subtitle">Unlock premium features to get more matches and find the one faster.</p>
+
+        <!-- Dynamic Auth Status Bar -->
+        <div id="subscription-auth-status" class="subscription-auth-status-container"></div>
 
         <div class="pricing-grid">
-            <div class="pricing-card">
+            <div class="pricing-card" data-plan="Basic">
                 <h3>Basic</h3>
                 <div class="pricing-price">Free</div>
                 <ul class="pricing-features">
@@ -131,10 +492,10 @@
                     <li>Send up to 5 messages per day</li>
                     <li>Basic search filters</li>
                 </ul>
-                <button class="btn btn--outline w-100">Current Plan</button>
+                <button class="btn btn--outline w-100" data-plan="Basic" id="btn-plan-basic">Current Plan</button>
             </div>
 
-            <div class="pricing-card pricing-card--popular">
+            <div class="pricing-card pricing-card--popular" data-plan="Premium">
                 <div class="popular-badge">Most Popular</div>
                 <h3>Premium</h3>
                 <div class="pricing-price">$9.99<span>/mo</span></div>
@@ -145,10 +506,10 @@
                     <li>Advanced search filters</li>
                     <li>Ad-free experience</li>
                 </ul>
-                <button class="btn btn--primary w-100">Upgrade to Premium</button>
+                <button class="btn btn--primary w-100" data-plan="Premium" id="btn-plan-premium">Upgrade to Premium</button>
             </div>
 
-            <div class="pricing-card">
+            <div class="pricing-card" data-plan="VIP">
                 <h3>VIP</h3>
                 <div class="pricing-price">$19.99<span>/mo</span></div>
                 <ul class="pricing-features">
@@ -157,7 +518,7 @@
                     <li>Read receipts for messages</li>
                     <li>Dedicated support</li>
                 </ul>
-                <button class="btn btn--outline w-100">Get VIP</button>
+                <button class="btn btn--outline w-100" data-plan="VIP" id="btn-plan-vip">Get VIP</button>
             </div>
         </div>
     </main>
@@ -165,7 +526,7 @@
     <footer class="footer">
         <div class="footer__content">
             <div class="footer__column">
-                <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+                <a href="homepage.html" class="navbar__brand"><span class="navbar__brand-icon">💖</span><span class="navbar__brand-text">Match<span>ly</span></span></a>
                 <p style="margin-top: 1rem;">Connecting hearts globally. Find your perfect match with confidence and trust.</p>
             </div>
             <div class="footer__column">
@@ -185,5 +546,10 @@
             <p>&copy; 2026 Matchly. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Universal & Subscription Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/subscription.js"></script>
 </body>
 </html>
