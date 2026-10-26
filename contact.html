@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matchly - Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <style>
         .contact-container {
             max-width: 800px;
             margin: 4rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 3rem 2.5rem;
+            background: var(--bg-surface);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+        .contact-container h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+        }
+        .contact-container p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
         }
         .form-group {
             margin-bottom: 1.5rem;
@@ -20,19 +35,35 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.92rem;
         }
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.85rem 1rem;
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 12px;
+            background: var(--bg-soft);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            transition: all 0.2s ease;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.15);
+        }
+        .contact-container .btn {
+            border-radius: 12px;
+            padding: 0.85rem 2rem;
         }
     </style>
 </head>
 <body class="logged-out">
+    <!-- Navbar -->
     <nav class="navbar">
-        <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+        <a href="homepage.html" class="navbar__brand"><span class="navbar__brand-icon">💖</span><span class="navbar__brand-text">Match<span>ly</span></span></a>
         <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
         <label for="mobile-menu-toggle" class="navbar__toggle">
             <span class="bar"></span>
@@ -41,17 +72,26 @@
         </label>
         <ul class="navbar__menu">
             <li><a href="homepage.html" class="navbar__link">Home</a></li>
-            <li><a href="search.html" class="navbar__link">Matches</a></li>
-            <li><a href="about.html" class="navbar__link">About Us</a></li>
-            <li class="nav-item-messages"><a href="messages.html" class="navbar__link">Messages</a></li>
+            <li class="nav-item-matches"><a href="search.html" class="navbar__link">Find Matches</a></li>
+            <li class="nav-item-messages"><a href="messages.html" class="navbar__link" style="position: relative;">Messages<span class="nav-msg-dot"></span></a></li>
             <li><a href="subscription.html" class="navbar__link">Subscription</a></li>
+            <li><a href="about.html" class="navbar__link">About Us</a></li>
         </ul>
         <div class="navbar__actions nav-actions-logged-out">
+            <button id="theme-toggle-btn" class="theme-toggle-inline" title="Toggle Theme" aria-label="Toggle Theme">🌙</button>
             <a href="login.html" class="btn btn--outline">Log In</a>
             <a href="register.html" class="btn btn--primary">Sign Up</a>
         </div>
         <div class="navbar__actions nav-actions-logged-in">
-            <a href="homepage.html" class="btn btn--outline">Log Out</a>
+            <button id="theme-toggle-btn-auth" class="theme-toggle-inline" title="Toggle Theme" aria-label="Toggle Theme">🌙</button>
+            <a href="profile.html#view=me" class="navbar__user-pill" title="View My Profile" style="text-decoration: none; cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" alt="Member" class="user-avatar-mini">
+                <div class="user-info-text">
+                    <span class="user-name-span">Rakshit</span>
+                    <span class="user-status-span">✓ Verified</span>
+                </div>
+            </a>
+            <a href="homepage.html" class="btn btn--outline btn-matchly-logout" style="padding: 0.35rem 0.8rem; font-size: 0.82rem; border-radius: 8px;">Log Out</a>
         </div>
     </nav>
 
@@ -78,7 +118,7 @@
     <footer class="footer">
         <div class="footer__content">
             <div class="footer__column">
-                <a href="homepage.html" class="navbar__brand">Match<span>ly</span></a>
+                <a href="homepage.html" class="navbar__brand"><span class="navbar__brand-icon">💖</span><span class="navbar__brand-text">Match<span>ly</span></span></a>
                 <p style="margin-top: 1rem;">Connecting hearts globally. Find your perfect match with confidence and trust.</p>
             </div>
             <div class="footer__column">
@@ -98,5 +138,10 @@
             <p>&copy; 2026 Matchly. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Universal & Contact Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
